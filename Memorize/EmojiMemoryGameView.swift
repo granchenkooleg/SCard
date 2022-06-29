@@ -13,6 +13,7 @@ struct EmojiMemoryGameView: View {
     
     var body: some View {
         VStack {
+            EmojiPickerView(viewModel: viewModel)
             Grid (viewModel.cards) { card in
                 CardView(card: card).onTapGesture {
                     withAnimation (.linear(duration:0.75)) {
@@ -88,27 +89,5 @@ struct CardView: View {
     
     private func fontSize(for size:CGSize) -> CGFloat {
          min(size.width, size.height) *  0.65
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let game = EmojiMemoryGame()
-        game.choose(card: game.cards[0])
-        return EmojiMemoryGameView(viewModel: game)
     }
 }

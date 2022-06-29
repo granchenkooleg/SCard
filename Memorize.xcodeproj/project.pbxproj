@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E9B68CA286C6E3D004024B5 /* EmojiPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E9B68C9286C6E3D004024B5 /* EmojiPickerView.swift */; };
 		E403851024934E1200F54134 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E403850F24934E1200F54134 /* EmojiMemoryGameView.swift */; };
 		E44E52C124C3235300D5A826 /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = E44E52C024C3235200D5A826 /* Cardify.swift */; };
 		E45123CD24A376F000BEA808 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E45123CC24A376EE00BEA808 /* Grid.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9E9B68C9286C6E3D004024B5 /* EmojiPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiPickerView.swift; sourceTree = "<group>"; };
 		E403850F24934E1200F54134 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		E44E52C024C3235200D5A826 /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
 		E45123CC24A376EE00BEA808 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				E45DC8522475255E000C015B /* AppDelegate.swift */,
 				E45DC8542475255E000C015B /* SceneDelegate.swift */,
 				E403850F24934E1200F54134 /* EmojiMemoryGameView.swift */,
+				9E9B68C9286C6E3D004024B5 /* EmojiPickerView.swift */,
 				E44E52C024C3235200D5A826 /* Cardify.swift */,
 				E45123CC24A376EE00BEA808 /* Grid.swift */,
 				E47A854324A992AE0080875B /* Array+Identifiable.swift */,
@@ -123,7 +126,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1140;
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "cs193p instructor";
 				TargetAttributes = {
 					E45DC84E2475255D000C015B = {
@@ -175,6 +178,7 @@
 				E47C09682482408900ED8F72 /* MemoryGame.swift in Sources */,
 				E46AC5FA2483A2D600E4D749 /* EmojiMemoryGame.swift in Sources */,
 				E47A854424A992AF0080875B /* Array+Identifiable.swift in Sources */,
+				9E9B68CA286C6E3D004024B5 /* EmojiPickerView.swift in Sources */,
 				E47A854224A8489D0080875B /* GridLayout.swift in Sources */,
 				E45123CD24A376F000BEA808 /* Grid.swift in Sources */,
 			);
@@ -220,6 +224,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -280,6 +285,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -312,17 +318,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
-				DEVELOPMENT_TEAM = QLY879YR3Y;
+				DEVELOPMENT_TEAM = 3VAZ237Y37;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Memorize/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestkora.cs193p.Memorize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bestkora.cs193p.Memoriz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -332,17 +341,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Memorize/Preview Content\"";
-				DEVELOPMENT_TEAM = QLY879YR3Y;
+				DEVELOPMENT_TEAM = 3VAZ237Y37;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = Memorize/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bestkora.cs193p.Memorize;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bestkora.cs193p.Memoriz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

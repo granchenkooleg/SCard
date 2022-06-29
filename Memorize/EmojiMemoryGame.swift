@@ -8,13 +8,27 @@
 
 import SwiftUI
 
+var paletteNames: [String: [String]] {
+    get {
+        [
+            "Faces": ["😀", "😅", "😂", "😇", "🥰", "😉", "🙃", "😎", "🥳", "😡", "🤯", "🥶", "🤥", "😴", "🙄", "👿"],
+            "Food": ["🍏", "🍎", "🥒", "🍞", "🥨", "🥓", "🍔", "🍟", "🍕", "🍰", "🍿", "🍤", "🍱", "🥝", "🌶", "🍒"],
+            "Animals": ["🐮","🐭","🕷", "🐷", "🦊", "🐰", "🐻", "🐯", "🦁", "🐸", "🐵", "🐍", "🦝", "🐤", "🐶", "🐱"],
+            "Sport": ["⚽️", "🏈", "⚾️", "🎾", "🏐", "🏓", "⛳️", "🥌", "⛷", "🚴‍♂️", "🎳", "🎼", "🎭", "🪂", "🥊", "🏀"],
+            "Flags": ["🇪🇺", "🇷🇺", "🇹🇷", "🇩🇪", "🇺🇸", "🇯🇵", "🇮🇩", "🇨🇳", "🇪🇸", "🇨🇭", "🇺🇦", "🇫🇷", "🇮🇹", "🇰🇷", "🇧🇾", "🇧🇷"]
+        ]
+    }
+}
+
 class EmojiMemoryGame: ObservableObject {
     @Published private var model: MemoryGame<String> =
                                EmojiMemoryGame.createMemoryGame()
-    
-    private static func createMemoryGame()-> MemoryGame<String> {
-        let emojis  = ["🐮","🐭","🕷", "🐷", "🦊", "🐰", "🐻", "🐯", "🦁", "🐸", "🐵", "🐍", "🦝", "🐤", "🐶", "🐱"]
-        return MemoryGame<String>(numberOfPairsOfCards: emojis.count) {pairIndex in
+
+
+    static func createMemoryGame(key: String? = nil) -> MemoryGame<String> {
+
+        let emojis = key != nil ? paletteNames[key!]! : paletteNames[paletteNames.keys.randomElement()!]!
+        return MemoryGame<String>(numberOfPairsOfCards: emojis.count) { pairIndex in
             return emojis[pairIndex]
         }
     }
@@ -34,5 +48,13 @@ class EmojiMemoryGame: ObservableObject {
     func resetGame () {
         model = EmojiMemoryGame.createMemoryGame()
     }
+
+//    func clearAll() -> MemoryGame<String> {
+//        model.cards.removeAll()
+////        let emojis = paletteNames["Food"]!
+////        return MemoryGame<String>(numberOfPairsOfCards: emojis.count) { pairIndex in
+////            return emojis[pairIndex]
+////        }
+//    }
 }
 

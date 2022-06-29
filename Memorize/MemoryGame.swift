@@ -9,16 +9,28 @@
 import Foundation
 
 struct MemoryGame <CardContent> where CardContent: Equatable {
-    private(set) var cards : Array<Card>
-    
-    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
-        get {cards.indices.filter { cards[$0].isFaceUp}.only}
-        set {
-            for index in cards.indices {
-                cards[index].isFaceUp = index == newValue
-            }
+    var paletteNames: [String: [String]] {
+        get {
+            [
+                "Faces": ["😀", "😅", "😂", "😇", "🥰", "😉", "🙃", "😎", "🥳", "😡", "🤯", "🥶", "🤥", "😴", "🙄", "👿"],
+                "Food": ["🍏", "🍎", "🥒", "🍞", "🥨", "🥓", "🍔", "🍟", "🍕", "🍰", "🍿", "🍤", "🍱", "🥝", "🌶", "🍒"],
+                "Animals": ["🐮","🐭","🕷", "🐷", "🦊", "🐰", "🐻", "🐯", "🦁", "🐸", "🐵", "🐍", "🦝", "🐤", "🐶", "🐱"],
+                "Sport": ["⚽️", "🏈", "⚾️", "🎾", "🏐", "🏓", "⛳️", "🥌", "⛷", "🚴‍♂️", "🎳", "🎼", "🎭", "🪂", "🥊", "🏀"],
+                "Flags": ["🇪🇺", "🇷🇺", "🇹🇷", "🇩🇪", "🇺🇸", "🇯🇵", "🇮🇩", "🇨🇳", "🇪🇸", "🇨🇭", "🇺🇦", "🇫🇷", "🇮🇹", "🇰🇷", "🇧🇾", "🇧🇷"]
+            ]
         }
     }
+
+    var cards : Array<Card>
+    
+//    private var indexOfTheOneAndOnlyFaceUpCard: Int? {
+//        get {cards.indices.filter { cards[$0].isFaceUp}.only}
+//        set {
+//            for index in cards.indices {
+//                cards[index].isFaceUp = index == newValue
+//            }
+//        }
+//    }
     
     mutating func choose(card:Card) {
         if let chosenIndex = cards.firstIndex(matching: card) {
